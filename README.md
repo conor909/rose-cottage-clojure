@@ -1,6 +1,6 @@
 # clojure-proj
 
-FIXME: Write a one-line description of your library/project.
+My Rose Cottage app, re-written in clojurescript
 
 ## Overview
 
