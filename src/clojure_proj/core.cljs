@@ -23,19 +23,18 @@
    ]
 )
 
-(def weather {:isDayTime "It is currently day time"
-              :isRaining "It is currently raining"})
+(def environment {:time "It is currently day time"
+                  :weather "It is currently raining"})
 
 (defn run []
   (reagent/render [app] (.getElementById js/document "app-container"))
-    (if (= (get weather :isRaining) "It is currently raining")
-      (canvas/draw-drop 0 0)
+    (canvas/init-canvas)
+    (if (= (get environment :weather) "It is currently raining")
+        (canvas/make-it-raaiiin 0 0)
     )
 )
 
 (run)
-
-(defonce app-state (atom {:text "Hello world!"}))
 
 (defn on-js-reload []
   ;; optionally touch your app-state to force rerendering depending on
