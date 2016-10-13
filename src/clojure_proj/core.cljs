@@ -10,30 +10,30 @@
        [:div  {:style {:fontSize "2em"}} subHead]
        [:div  {:style {:fontSize "3em"}} head]]))
 
-(defn canvas []
-  [:canvas {:id "my-canvas" :style {:position "absolute"}} ])
-
-(defn draw-drop []
-  (let [target (.getElementById js/document "my-canvas") ctx (.getContext target "2d")]
-    (.beginPath ctx)
-    (.moveTo ctx  100 0)
-    (.lineTo ctx 145 75)
-    (.arc ctx 100 75 45 0 (* 1 Math/PI))
-    (.moveTo ctx  55 75)
-    (.lineTo ctx 100 0)
-    (canvas/fill-style ctx "rgba(255, 255, 255, 0.5)")
-    (.fill ctx)))
-
 (defn app []
-    [:div {:style {:position "relative" :height "100%" :background ["linear-gradient(180deg, #152b52 7%, #2c9ab3 51%, #f3f3d1 90%", "#f3f3d1"]}}
-    [canvas]
-    [header-component {:subHead "Welcome to" :head "Rose Cottage"}]])
+  [:div {
+       :style {
+         :position "relative"
+         :height "100%"
+         :background ["linear-gradient(180deg, #152b52 7%, #2c9ab3 51%, #f3f3d1 90%", "#f3f3d1"]
+       }
+    }
+    [canvas/canvas]
+    [header-component {:subHead "Welcome to" :head "Rose Cottage"}]
+   ]
+)
+
+(def weather {:isDayTime "It is currently day time"
+              :isRaining "It is currently raining"})
 
 (defn run []
-  (reagent/render [app] (.getElementById js/document "app-container")))
+  (reagent/render [app] (.getElementById js/document "app-container"))
+    (if (= (get weather :isRaining) "It is currently raining")
+      (canvas/draw-drop 0 0)
+    )
+)
 
 (run)
-(draw-drop [])
 
 (defonce app-state (atom {:text "Hello world!"}))
 
