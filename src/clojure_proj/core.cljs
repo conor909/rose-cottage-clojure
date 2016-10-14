@@ -10,6 +10,9 @@
        [:div  {:style {:fontSize "2em"}} subHead]
        [:div  {:style {:fontSize "3em"}} head]]))
 
+(defn canvas-el []
+  [:canvas {:id "my-canvas" :style {:position "absolute"}} ])
+
 (defn app []
   [:div {
        :style {
@@ -18,7 +21,8 @@
          :background ["linear-gradient(180deg, #152b52 7%, #2c9ab3 51%, #f3f3d1 90%", "#f3f3d1"]
        }
     }
-    [canvas/canvas]
+    [canvas-el]
+    [canvas/init-canvas]
     [header-component {:subHead "Welcome to" :head "Rose Cottage"}]
    ]
 )

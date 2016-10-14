@@ -7,8 +7,7 @@
   (set! (.-fillStyle ctx) color)
 )
 
-(defn init-canvas
-  []
+(defn init-canvas []
   (set! (.-width canvas) (.-innerWidth js/window) )
   (set! (.-height canvas) (.-innerWidth js/window)))
 
@@ -21,7 +20,7 @@
   (.lineTo ctx (+ x 100) y)
   (fill-style ctx "rgba(255, 255, 255, 0.5)")
   (.fill ctx)
-  )
+)
 
 (defn make-it-raaiiin [x y]
   (loop [x 1000]
