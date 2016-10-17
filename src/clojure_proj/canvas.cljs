@@ -1,11 +1,16 @@
 (ns clojure-proj.canvas)
 
 (defn fill-style [ctx color]
-  (set! (.-fillStyle ctx) color)
-  )
+  (set! (.-fillStyle ctx) color))
+
+(def screenWidth (.-innerWidth js/window))
+(def screenHeight (.-innerWidth js/window))
+
 (defn init-canvas [el]
-  (set! (.-width el) (.-innerWidth js/window))
-  (set! (.-height el) (.-innerWidth js/window)))
+  (set! (.-width el) screenWidth)
+  (set! (.-height el) screenHeight))
+
+(def rain-drop {:x (rand screenWidth) :y (rand screenHeight)})
 
 (defn draw-drop [ctx x y]
   (.save ctx)
@@ -21,5 +26,5 @@
   (.restore ctx))
 
 (defn make-it-raaiiin [ctx y]
-  (dotimes [x 1000]
-    (draw-drop ctx x y)))
+  (dotimes [x 100]
+    (draw-drop ctx (rand 10000) y)))

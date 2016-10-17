@@ -1,4 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="ReplState" timestamp="1476462027599">{:repl-history {:ide [], :local [&quot;(clojure-proj.core/app)&quot; &quot;(def result (clojure-proj.core/app)) &quot; &quot;result&quot; &quot;(nth result 0)&quot; &quot;(nth result 1)&quot; &quot;(def props {:text \&quot;cube19\&quot;})&quot; &quot;(props :text)&quot; &quot;(get props :text)&quot; &quot;(:text propseorgiunh)&quot; &quot;(def props nil)&quot; &quot;props&quot; &quot;(:text props)&quot;], :remote []}}</component>
+  <component name="ReplState" timestamp="1476724311385">{:repl-history {:ide [], :local [&quot;(clojure-proj.core/app)&quot; &quot;(def result (clojure-proj.core/app)) &quot; &quot;result&quot; &quot;(nth result 0)&quot; &quot;(nth result 1)&quot; &quot;(def props {:text \&quot;cube19\&quot;})&quot; &quot;(props :text)&quot; &quot;(get props :text)&quot; &quot;(:text propseorgiunh)&quot; &quot;(def props nil)&quot; &quot;props&quot; &quot;(:text props)&quot;], :remote []}}</component>
 </project>
